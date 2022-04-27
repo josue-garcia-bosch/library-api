@@ -1,0 +1,599 @@
+{
+	"info": {
+		"_postman_id": "d9385147-c54c-44da-a92d-10b77ed50779",
+		"name": "Books API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "auth",
+			"item": [
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"cjosueg7@gmail.com\",\n    \"password\": \"cjosueg7#1234\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://library-cms.azurewebsites.net/api/v1/auth/login",
+							"protocol": "https",
+							"host": [
+								"library-cms",
+								"azurewebsites",
+								"net"
+							],
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{   \n    \"name\": \"josue garcia\",\n    \"email\": \"cjosueg7@gmail.com\",\n    \"password\": \"cjosueg7#1234\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://library-cms.azurewebsites.net/api/v1/auth/register",
+							"protocol": "https",
+							"host": [
+								"library-cms",
+								"azurewebsites",
+								"net"
+							],
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "books",
+			"item": [
+				{
+					"name": "create book",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyNjFmMjk0NDNhN2NjZGM4MjhmMTQ5ZSIsImlhdCI6MTY1MDU4NzcwMjM1MSwianRpIjoiNGRlNWI4MjctZjQyNi00MTk3LTlkZmMtY2E3ZmIzMDBhN2NiIiwiZXhwIjoxNjUwNTg3Nzg4NzUxfQ.PyfbqeG46B35hj67jiQKrmujW7iT-0sw6h4m44xQtI4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"imageURL\": \"\",\n    \"title\":\"harry potter is 8\",\n    \"yearOfPublication\": 2004,\n    \"author\": \"jk rolling\",\n    \"category\": \"magic\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://library-cms.azurewebsites.net/api/v1/books",
+							"protocol": "https",
+							"host": [
+								"library-cms",
+								"azurewebsites",
+								"net"
+							],
+							"path": [
+								"api",
+								"v1",
+								"books"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "patch book",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyNjFmMjk0NDNhN2NjZGM4MjhmMTQ5ZSIsImlhdCI6MTY1MDU4NzcwMjM1MSwianRpIjoiNGRlNWI4MjctZjQyNi00MTk3LTlkZmMtY2E3ZmIzMDBhN2NiIiwiZXhwIjoxNjUwNTg3Nzg4NzUxfQ.PyfbqeG46B35hj67jiQKrmujW7iT-0sw6h4m44xQtI4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"imageURL\": \"https://es.web.img2.acsta.net/pictures/14/04/30/11/55/592219.jpg\",\n    \"title\":\"harry potter 9\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://library-cms.azurewebsites.net/api/v1/books/62672a2b6148374cfad15fc0",
+							"protocol": "https",
+							"host": [
+								"library-cms",
+								"azurewebsites",
+								"net"
+							],
+							"path": [
+								"api",
+								"v1",
+								"books",
+								"62672a2b6148374cfad15fc0"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "assign book",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyNjFmMjk0NDNhN2NjZGM4MjhmMTQ5ZSIsImlhdCI6MTY1MDU4NzcwMjM1MSwianRpIjoiNGRlNWI4MjctZjQyNi00MTk3LTlkZmMtY2E3ZmIzMDBhN2NiIiwiZXhwIjoxNjUwNTg3Nzg4NzUxfQ.PyfbqeG46B35hj67jiQKrmujW7iT-0sw6h4m44xQtI4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://library-cms.azurewebsites.net/api/v1/books/626723871c49c112ab10ae8b/assign/6261f29443a7ccdc828f149e",
+							"protocol": "https",
+							"host": [
+								"library-cms",
+								"azurewebsites",
+								"net"
+							],
+							"path": [
+								"api",
+								"v1",
+								"books",
+								"626723871c49c112ab10ae8b",
+								"assign",
+								"6261f29443a7ccdc828f149e"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "borrow book",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyNjZlMDI5OTAxMWQ3YWI4Y2VlODk3MyIsImlhdCI6MTY1MDkyNzY2Mzk3OCwianRpIjoiYzc2MTdkNDItMzQ5YS00YzcxLTljMjQtOTk3ZTEzMGE4YWVkIiwiZXhwIjoxNjUwOTI3NzUwMzc4fQ._ZEZ3GRegTo8bFj4_2mnDLTdqN-fMctWxXQWLetI8qg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"url": {
+							"raw": "https://library-cms.azurewebsites.net/api/v1/books/626723871c49c112ab10ae8b/borrow",
+							"protocol": "https",
+							"host": [
+								"library-cms",
+								"azurewebsites",
+								"net"
+							],
+							"path": [
+								"api",
+								"v1",
+								"books",
+								"626723871c49c112ab10ae8b",
+								"borrow"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "return book",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyNjZlMDI5OTAxMWQ3YWI4Y2VlODk3MyIsImlhdCI6MTY1MDkyNzY2Mzk3OCwianRpIjoiYzc2MTdkNDItMzQ5YS00YzcxLTljMjQtOTk3ZTEzMGE4YWVkIiwiZXhwIjoxNjUwOTI3NzUwMzc4fQ._ZEZ3GRegTo8bFj4_2mnDLTdqN-fMctWxXQWLetI8qg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"url": {
+							"raw": "https://library-cms.azurewebsites.net/api/v1/books/626723871c49c112ab10ae8b/return",
+							"protocol": "https",
+							"host": [
+								"library-cms",
+								"azurewebsites",
+								"net"
+							],
+							"path": [
+								"api",
+								"v1",
+								"books",
+								"626723871c49c112ab10ae8b",
+								"return"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get Book By Id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyNjFmMjk0NDNhN2NjZGM4MjhmMTQ5ZSIsImlhdCI6MTY1MDU4NzcwMjM1MSwianRpIjoiNGRlNWI4MjctZjQyNi00MTk3LTlkZmMtY2E3ZmIzMDBhN2NiIiwiZXhwIjoxNjUwNTg3Nzg4NzUxfQ.PyfbqeG46B35hj67jiQKrmujW7iT-0sw6h4m44xQtI4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://library-cms.azurewebsites.net/api/v1/books/626723871c49c112ab10ae8b",
+							"protocol": "https",
+							"host": [
+								"library-cms",
+								"azurewebsites",
+								"net"
+							],
+							"path": [
+								"api",
+								"v1",
+								"books",
+								"626723871c49c112ab10ae8b"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete Book By Id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyNjFmMjk0NDNhN2NjZGM4MjhmMTQ5ZSIsImlhdCI6MTY1MDU4NzcwMjM1MSwianRpIjoiNGRlNWI4MjctZjQyNi00MTk3LTlkZmMtY2E3ZmIzMDBhN2NiIiwiZXhwIjoxNjUwNTg3Nzg4NzUxfQ.PyfbqeG46B35hj67jiQKrmujW7iT-0sw6h4m44xQtI4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://library-cms.azurewebsites.net/api/v1/books/62672440e1b776a2aecd2b4a",
+							"protocol": "https",
+							"host": [
+								"library-cms",
+								"azurewebsites",
+								"net"
+							],
+							"path": [
+								"api",
+								"v1",
+								"books",
+								"62672440e1b776a2aecd2b4a"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get Books",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyNjFmMjk0NDNhN2NjZGM4MjhmMTQ5ZSIsImlhdCI6MTY1MDU4NzcwMjM1MSwianRpIjoiNGRlNWI4MjctZjQyNi00MTk3LTlkZmMtY2E3ZmIzMDBhN2NiIiwiZXhwIjoxNjUwNTg3Nzg4NzUxfQ.PyfbqeG46B35hj67jiQKrmujW7iT-0sw6h4m44xQtI4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://library-cms.azurewebsites.net/api/v1/books?limit=5&sort=-title&page=1&search=harry",
+							"protocol": "https",
+							"host": [
+								"library-cms",
+								"azurewebsites",
+								"net"
+							],
+							"path": [
+								"api",
+								"v1",
+								"books"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "5"
+								},
+								{
+									"key": "sort",
+									"value": "-title",
+									"description": "switch with - for last ofr without - for first ex. title and -title"
+								},
+								{
+									"key": "page",
+									"value": "1",
+									"description": "pages start from 0"
+								},
+								{
+									"key": "search",
+									"value": "harry",
+									"description": "full text search"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "users",
+			"item": [
+				{
+					"name": "get users",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyNjFmMjk0NDNhN2NjZGM4MjhmMTQ5ZSIsImlhdCI6MTY1MDU4NzcwMjM1MSwianRpIjoiNGRlNWI4MjctZjQyNi00MTk3LTlkZmMtY2E3ZmIzMDBhN2NiIiwiZXhwIjoxNjUwNTg3Nzg4NzUxfQ.PyfbqeG46B35hj67jiQKrmujW7iT-0sw6h4m44xQtI4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://library-cms.azurewebsites.net/api/v1/users?order=asc&limit=5&page=0",
+							"protocol": "https",
+							"host": [
+								"library-cms",
+								"azurewebsites",
+								"net"
+							],
+							"path": [
+								"api",
+								"v1",
+								"users"
+							],
+							"query": [
+								{
+									"key": "order",
+									"value": "asc",
+									"description": "options asc, desc"
+								},
+								{
+									"key": "limit",
+									"value": "5"
+								},
+								{
+									"key": "page",
+									"value": "0"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get users by Id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyNjFmMjk0NDNhN2NjZGM4MjhmMTQ5ZSIsImlhdCI6MTY1MDU4NzcwMjM1MSwianRpIjoiNGRlNWI4MjctZjQyNi00MTk3LTlkZmMtY2E3ZmIzMDBhN2NiIiwiZXhwIjoxNjUwNTg3Nzg4NzUxfQ.PyfbqeG46B35hj67jiQKrmujW7iT-0sw6h4m44xQtI4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://library-cms.azurewebsites.net/api/v1/users/6266e0299011d7ab8cee8973",
+							"protocol": "https",
+							"host": [
+								"library-cms",
+								"azurewebsites",
+								"net"
+							],
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"6266e0299011d7ab8cee8973"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete user by id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyNjFmMjk0NDNhN2NjZGM4MjhmMTQ5ZSIsImlhdCI6MTY1MDU4NzcwMjM1MSwianRpIjoiNGRlNWI4MjctZjQyNi00MTk3LTlkZmMtY2E3ZmIzMDBhN2NiIiwiZXhwIjoxNjUwNTg3Nzg4NzUxfQ.PyfbqeG46B35hj67jiQKrmujW7iT-0sw6h4m44xQtI4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://library-cms.azurewebsites.net/api/v1/users/6266e92754b060566b49656a",
+							"protocol": "https",
+							"host": [
+								"library-cms",
+								"azurewebsites",
+								"net"
+							],
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"6266e92754b060566b49656a"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "promote users",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyNjFmMjk0NDNhN2NjZGM4MjhmMTQ5ZSIsImlhdCI6MTY1MDU4NzcwMjM1MSwianRpIjoiNGRlNWI4MjctZjQyNi00MTk3LTlkZmMtY2E3ZmIzMDBhN2NiIiwiZXhwIjoxNjUwNTg3Nzg4NzUxfQ.PyfbqeG46B35hj67jiQKrmujW7iT-0sw6h4m44xQtI4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"role\": \"user\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://library-cms.azurewebsites.net/api/v1/users/62672a7f6148374cfad15fe0/promote",
+							"protocol": "https",
+							"host": [
+								"library-cms",
+								"azurewebsites",
+								"net"
+							],
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"62672a7f6148374cfad15fe0",
+								"promote"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create users",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyNjFmMjk0NDNhN2NjZGM4MjhmMTQ5ZSIsImlhdCI6MTY1MDU4NzcwMjM1MSwianRpIjoiNGRlNWI4MjctZjQyNi00MTk3LTlkZmMtY2E3ZmIzMDBhN2NiIiwiZXhwIjoxNjUwNTg3Nzg4NzUxfQ.PyfbqeG46B35hj67jiQKrmujW7iT-0sw6h4m44xQtI4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"cesar medina\",\n    \"email\": \"novoat123@gmail.com\",\n    \"password\": \"123456\",\n    \"role\": \"user\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://library-cms.azurewebsites.net/api/v1/users",
+							"protocol": "https",
+							"host": [
+								"library-cms",
+								"azurewebsites",
+								"net"
+							],
+							"path": [
+								"api",
+								"v1",
+								"users"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
