@@ -28,3 +28,10 @@ export const login = async (req, res) => {
 
     return res.status(200).json({ token: login.token });
 };
+
+export const me = async (req, res) => {
+  const userId = req.userId;
+  const user = await userService.getUser(userId);
+
+  return res.status(200).json(user);
+};
